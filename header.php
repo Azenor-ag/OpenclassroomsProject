@@ -1,64 +1,47 @@
 <?php
 /**
- * The header for Astra Theme.
+ * The header for our theme
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Astra
- * @since 1.0.0
+ * @package underscore
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
-
-?><!DOCTYPE html>
-<?php astra_html_before(); ?>
+?>
+<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-<?php astra_head_top(); ?>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="https://gmpg.org/xfn/11">
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-<?php wp_head(); ?>
-<?php astra_head_bottom(); ?>
+	<?php wp_head(); ?>
 </head>
 
-<body <?php astra_schema_body(); ?> <?php body_class(); ?>>
-<?php astra_body_top(); ?>
+<body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'underscore' ); ?></a>
 
-<a
-	class="skip-link screen-reader-text"
-	href="#content"
-	role="link"
-	title="<?php echo esc_html( astra_default_strings( 'string-header-skip-link', false ) ); ?>">
-		<?php echo esc_html( astra_default_strings( 'string-header-skip-link', false ) ); ?>
-</a>
-
-<div
-<?php
-	echo astra_attr(
-		'site',
-		array(
-			'id'    => 'page',
-			'class' => 'hfeed site',
-		)
-	);
-	?>
->
-	<?php
-	astra_header_before();
-
-	astra_header();
-
-	astra_header_after();
-
-	astra_content_before();
-	?>
-	<div id="content" class="site-content">
-		<div class="ast-container">
-		<?php astra_content_top(); ?>
+	<header id="masthead" class="site-header">
+			<div class="site-branding">
+				<?php
+				the_custom_logo();
+				?>
+		 </div><!-- .site-branding -->
+			<div id="hd-navigation"><nav  class="main-navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'underscore' ); ?></button>
+				<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+						)
+					);
+				?>
+			</nav><!-- #site-navigation -->
+		<button class=commander> <a href="http://localhost/Projet6/commander/" >Commander</button>
+		</div>
+	</header><!-- #masthead -->
