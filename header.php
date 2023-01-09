@@ -32,7 +32,7 @@
 				?>
 		 </div><!-- .site-branding -->
 			<div id="hd-navigation"><nav  class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'underscore' ); ?></button>
+				
 				<?php
 					wp_nav_menu(
 						array(
@@ -42,6 +42,6 @@
 					);
 				?>
 			</nav><!-- #site-navigation -->
-		<button class=commander> <a href="http://localhost/Projet6/commander/" >Commander</button>
+		<button class=commander> <a href="http://localhost/Projet6/commander/" >Commander</a></button>
 		</div>
 	</header><!-- #masthead -->
